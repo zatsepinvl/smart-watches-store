@@ -1,0 +1,21 @@
+<div id="wrapper" ng-controller="MainCtrl">
+    <header>
+        <a href="/"><img src="images/logo.png" alt="Whitesquare logo"></a>
+    </header>
+    <nav>
+        <ul class="top-menu">
+            <li><a ng-class="getClass('/')" href="" ng-click="goState('main.home')">Главная</a></li>
+            <li><a ng-class="getClass('/catalog')" href="" ng-click="goState('main.catalog')">Каталог</a></li>
+            <li style="float:right;" class="accent"><a ng-class="getClass('/cart')" href=""
+                                                       ng-click="goState('main.cart')"
+            ng-controller="CartCtrl">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Корзина ({{order.items.length}})</a></li>
+        </ul>
+    </nav>
+    <div>
+        <div ui-view></div>
+    </div>
+</div>
+<footer>
+    <div id="footer"></div>
+</footer>

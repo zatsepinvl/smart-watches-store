@@ -1,0 +1,32 @@
+<div class="home-container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="catalog-item"><img src="../images/hero_large_2x.jpg" width="100%"></div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="heading">
+                <h3>Лучшие предложения</h3>
+            </div>
+        </div>
+
+        <div class="col-sm-4" ng-repeat="item in items"
+             ng-click="goState('main.item',{itemId:item.item_id})">
+            <div class="catalog-item row">
+                <div class="col-sm-12" style="padding: 0">
+                    <img ng-src="images/watches/{{item.image}}"/>
+                </div>
+                <div class="title col-sm-12" ng-bind-html="item.name">
+                </div>
+                <div class="price col-sm-12" ng-bind-html="item.price+'p'">
+                </div>
+                <div class="action col-sm-12">
+                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<aside></aside>
+<section></section>

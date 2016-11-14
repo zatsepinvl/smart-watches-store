@@ -1,0 +1,33 @@
+<aside>
+    <nav>
+        <ul class="aside-menu">
+            <li><a ng-click="temp.manufacturer_id=0" ng-class="isActive(0)">Apple</a></li>
+            <li><a ng-click="temp.manufacturer_id=1" ng-class="isActive(1)">Asus</a></li>
+            <li><a ng-click="temp.manufacturer_id=2" ng-class="isActive(2)">Samsung</a></li>
+        </ul>
+    </nav>
+   <!-- <h2>Наши офисы</h2>
+    <p>
+        <img src="../images/sample.png" width="230" height="180" alt="Our offices">
+    </p>-->
+</aside>
+<section>
+    <div class="home-container">
+        <div class="row">
+            <div class="col-sm-4" ng-repeat="item in items | filter:temp">
+                <div class="catalog-item row" ng-click="goState('main.item',{itemId:item.item_id})">
+                    <div class="col-sm-12" style="padding: 0">
+                        <img ng-src="images/watches/{{item.image}}"/>
+                    </div>
+                    <div class="title col-sm-12" ng-bind-html="item.name">
+                    </div>
+                    <div class="price col-sm-12" ng-bind-html="item.price+'p'">
+                    </div>
+                    <div class="action col-sm-12">
+                        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,9 @@
+Options +ExecCGI
+AddDefaultCharset UTF-8
+Options +FollowSymLinks
+
+RewriteEngine On
+RewriteRule ^api/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ /api/api.php/$1/$2
+RewriteRule ^api/([a-zA-Z0-9]+)$ /api/api.php/$1
+RewriteRule ^([a-zA-Z0-9/]+)/([a-zA-Z0-9/]+/)$ /index.html
+RewriteRule ^([a-zA-Z0-9/]*)$ /index.html

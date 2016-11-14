@@ -1,0 +1,28 @@
+<div class="row" style="color:black; font-size: 14px; padding: 60px;">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Номер заказа</th>
+            <th>Время</th>
+            <th>Товар</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Телефон</th>
+            <th>Адрес</th>
+            <th>Cумма заказа</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="order in orders | orderBy : 'time' : true ">
+            <td>{{order.order_id}}</td>
+            <td>{{order.time.format('HH:mm DD.MM.YY');}}</td>
+            <td ng-bind-html="order.textItems"></td>
+            <td>{{order.first_name}}</td>
+            <td>{{order.last_name}}</td>
+            <td>{{order.phone}}</td>
+            <td>{{order.address}}</td>
+            <td>{{order.total}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

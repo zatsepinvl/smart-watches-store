@@ -1,0 +1,101 @@
+<style>
+    .td {
+        padding: 8px;
+    }
+
+    input {
+        color: black;
+    }
+</style>
+<div ng-if="!order.ordered">
+    <div class="row" style="background-color: #fefefe; margin: 10px; padding:10px; font-size: 14px">
+        <p style="text-align: left;">Заказ</p>
+        <table class="table">
+            <thead>
+            <tr>
+                <td></td>
+                <td>№</td>
+                <td>Товар</td>
+                <td>Стоимость</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in order.items track by $index">
+                <td><a ng-click="remove(item)" href="">Удалить</a></td>
+                <td>{{order.items.indexOf(item)}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>{{order.total}}</b></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row" ng-if="order.items.length"
+         style="background-color: #fefefe; margin: 10px; padding:10px; font-size: 14px">
+        <p>Форма заказа</p>
+        <form ng-submit="submit()" ng-controller="CartFormCtrl">
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-4 td">
+                    <label for="firstName">Имя: </label>
+                </div>
+                <div class="col-sm-3 td">
+                    <input id="firstName" type="text" ng-model="order.first_name" ng-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-4 td">
+                    <label for="lastName">Фамилия: </label>
+                </div>
+                <div class="col-sm-3 td">
+                    <input id="lastName" type="text" ng-model="order.last_name" ng-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-4 td">
+                    <label for="phone">Телефон:</label>
+                </div>
+                <div class="col-sm-3 td">
+                    <input id="phone" type="text" ng-model="order.phone" ng-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-4 td">
+                    <label for="address">Адрес:</label>
+                </div>
+                <div class="col-sm-3 td">
+                    <input id="address" type="text" ng-model="order.address" ng-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-4 td">
+                    <label for="email">E-mail:</label>
+                </div>
+                <div class="col-sm-3 td">
+                    <input id="email" type="email" ng-model="order.email" ng-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-4 td">
+                    <input type="reset" value="Очистить">
+                </div>
+                <div class="col-sm-2 td">
+                    <input type="submit" value="Отправить">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div ng-if="order.ordered" style="text-align: center; font-size: 16px; color:black;">
+    <p>Ваш заказ успешно принят. Скоро с Вами свяжется наш оператор.</p>
+</div>
