@@ -115,11 +115,12 @@ app.service('CartService', function ($cookies) {
 ;
 
 app.factory('Entity', function ($resource) {
-    return $resource('/api/:entity/:id', {
+    return $resource('/api/api.php/:entity/:id', {
         entity: '@entity',
         id: '@id'
     }, {
         'update': {
+
             method: 'PUT'
         }
     });

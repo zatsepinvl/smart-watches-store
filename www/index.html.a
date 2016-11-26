@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html ng-app="app">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -6,14 +6,14 @@
     <base href="/">
     <title>Whitesquare</title>
 
-    <link rel="stylesheet" href="dist/vendors.min.css" type="text/css">
-    <link rel="stylesheet" href="css/lib/fonts.css" type="text/css">
-    <link rel="stylesheet" href="css/app/styles.css" type="text/css">
+    <link rel="stylesheet" href="dist/vendors.min.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="css/lib/fonts.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="css/app/styles.css" type="text/css" charset="utf-8">
     <script src="dist/vendors.min.js"></script>
 </head>
 <body ng-cloak ng-controller="MainCtrl">
 <div ui-view></div>
-<script src="js/app/app_config.js"></script>
+<script src="js/app/app_config.js" charset="utf-8"></script>
 </body>
 
 </html>

@@ -48,7 +48,7 @@ for ($i = 0; $i < count($columns); $i++) {
 if (($table == 'order') && ($method != 'POST')) {
     if (($_SERVER['PHP_AUTH_USER'] != $admin_name) || ($_SERVER['PHP_AUTH_PW'] != $admin_password)) {
         header('WWW-Authenticate: Basic realm="Enter admin credentials"');
-        header('HTTP/1.0 401 Unauthorized');
+        header('HTTP/1.0 401 Unauthmsdorized');
         echo 'Bad credentials';
         exit;
     }
